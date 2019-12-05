@@ -10,37 +10,33 @@ namespace Test
     {
         public double GetValue(string nameVal)
         {
+            double value = 0;
             for (int i = 0; i < 3; i++)
             {
-                Console.WriteLine("Please enter side of square");
-                String side0 = Console.ReadLine();
-                Console.WriteLine("Please enter radius of circle");
-                String radius0 = Console.ReadLine();
+                Console.WriteLine("Please enter main characteristic parameter of {0}", nameVal);
+                String value0 = Console.ReadLine();
 
-                double.TryParse(side0, out side);
-                if (double.IsNaN(side) || double.IsInfinity(side))
+                double.TryParse(value0, out value);
+                if (double.IsNaN(value) || double.IsInfinity(value))
                 {
-                    Console.WriteLine("Incorrect value of square side was entered");
-                    continue;
-                }
-
-                double.TryParse(radius0, out radius);
-                if (double.IsNaN(radius) || double.IsInfinity(radius))
-                {
-                    Console.WriteLine("Incorrect value of radius was entered");
+                    Console.WriteLine("Incorrect parameter for {0} was entered", nameVal);
                     continue;
                 }
 
                 break;
             }
 
-            if (radius <= 0 || side <= 0)
+            value = Math.Round(value * 100d) / 100;
+
+            if (value <= 0 )
             {
-                Console.WriteLine("Wrong or zero data was entered. Square side and radius will be set randomly");
+                Console.WriteLine("Wrong or zero data was entered. Characteristic parameter will be set randomly");
                 Random r = new Random();
-                radius = Math.Round((r.NextDouble() * (5.0 - 0.5) + 0.5) * 100d) / 100d;
-                side = Math.Round((r.NextDouble() * (5.0 - 0.5) + 0.5) * 100d) / 100d;
+                value = Math.Round((r.NextDouble() * (5.0 - 0.5) + 0.5) * 100d) / 100d;
+                
             }
+
+            return value;
         }
     }
 }
