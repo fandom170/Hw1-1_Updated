@@ -6,7 +6,7 @@ namespace Test
 {
     class Constants
     {
-        public static double pi = 3.1415926;
-        //public static double pi = Math.pi;
+        //public static double pi = 3.1415926;
+        public static double pi = Math.PI;
     }
 }

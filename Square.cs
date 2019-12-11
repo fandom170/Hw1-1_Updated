@@ -25,6 +25,10 @@ namespace Test
             get {return _side;}
         }
 
+        public double diagonal 
+        {
+            get { return _side * Math.Sqrt(2); }
+        }
 
 
     }

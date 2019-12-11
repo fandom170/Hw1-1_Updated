@@ -7,7 +7,7 @@ namespace Test
     class Circle
     {
         private double radius;
-        private double area;
+
         public Circle(double radius) {
             this.radius = radius;
         }
@@ -22,9 +22,11 @@ namespace Test
             return radius;
         }
 
-        public double GetDiam() 
+        public double GetDiameter() 
         {
             return (Math.Round(radius * 2 * 100d))/100;
         }
+
+        
     }
 }
