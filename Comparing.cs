@@ -10,23 +10,23 @@ namespace Test
             string result = "";
             if (circle.GetDiameter() < square.side) 
             {
-                Console.WriteLine("Circle is fully inside square");
+                result = "Circle is fully inside square";
             } 
             else if (circle.GetDiameter() == square.side) 
             {
-                Console.WriteLine("Diametr of circle is equal radius");
+                result = "Diametr of circle is equal radius";
             }
             else if (square.diagonal == circle.GetDiameter()) 
             {
-                Console.WriteLine("corners of circle match circle line");
+                result = "Corners of circle match circle line";
             }
             else if (circle.GetDiameter() > square.diagonal) 
             {
-                Console.WriteLine("circle is greater than square");
+                result = "Circle is greater than square";
             }
             else 
             {
-                Console.WriteLine("Circle crosses square");
+                result = "Circle crosses square";
             }
              return result;
         }
